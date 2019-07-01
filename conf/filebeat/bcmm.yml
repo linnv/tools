@@ -1,0 +1,23 @@
+- key: bcmm
+  title: "Bcmm"
+  description: >
+      Bcmm mapping
+  fields:
+  - name: '@timestamp'
+    type: keyword
+    ignore_above: 513
+  - name: ReplyNode
+    type: group
+    fields:
+    - name: Node
+      type: keyword
+      ignore_above: 256
+  - name: ReqServer
+    type: group
+    fields:
+    - name: ReqTime
+      type: date
+      format : 'yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_second'
+    - name: UserID
+      type: keyword
+      ignore_above: 512
